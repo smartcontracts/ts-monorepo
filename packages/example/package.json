@@ -1,0 +1,31 @@
+{
+  "name": "@monorepo/example",
+  "version": "0.0.0",
+  "description": "TypeScript Monorepo Blueprint Example Project",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "build": "yarn build:ts",
+    "build:ts": "tsc -p ./tsconfig.json",
+    "clean": "rimraf dist/ ./tsconfig.tsbuildinfo",
+    "test:coverage": "echo 'no tests'",
+    "lint": "yarn lint:fix && yarn lint:check",
+    "lint:fix": "yarn lint:ts:fix",
+    "lint:check": "yarn lint:ts:check",
+    "lint:ts:fix": "yarn lint:ts:check --fix",
+    "lint:ts:check": "eslint . --max-warnings=0",
+    "pre-commit": "lint-staged"
+  },
+  "homepage": "https://github.com/smartcontracts/ts-monorepo/tree/main/packages/example#readme",
+  "license": "MIT",
+  "author": "Kelvin Fichter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smartcontracts/ts-monorepo.git"
+  },
+  "dependencies": {}
+}
